@@ -69,12 +69,15 @@ const Book = (props) => {
     <div>
       <h2>{book.title}</h2>
       <h4>{book.author}</h4>
-      <p>{book.note}</p>
       <p>{book.rating}</p>
+      <p>{book.note}</p>
       <p>{book.onWishlist}</p>
       <p>{book.onRead}</p>
       <div>
         <button className="button btn btn-danger" onClick={destroy}>Delete Book</button>
+        <Link to={`/books/${props.match.params.bookId}/edit`}>
+          <button className="button btn btn-success">Edit Book</button>
+        </Link>
       </div>
       <div>
         <Link to='/books/'>Back to all books</Link>

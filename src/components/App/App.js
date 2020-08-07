@@ -11,6 +11,8 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 
 import Books from './../routes/Books'
 import Book from './../routes/Book'
+import BookCreate from './../routes/BookCreate'
+import BookEdit from './../routes/BookEdit'
 
 class App extends Component {
   constructor () {
@@ -55,6 +57,12 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/books/:bookId' render={(props) => (
             <Book {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/create-book/' render={() => (
+            <BookCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/books/:bookId/edit' render={(props) => (
+            <BookEdit {...props} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         {msgAlerts.map((msgAlert, index) => (
