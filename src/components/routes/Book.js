@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 
@@ -8,22 +8,23 @@ const Book = (props) => {
   const [book, setBook] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
+  console.log(props)
   useEffect(() => {
     axios({
-      url: `${apiUrl}/books/${props.match.params.id}`,
+      url: `${apiUrl}/books/${props.match.params.bookId}/`,
       method: 'GET',
       headers: {
-        'Authorization': `Token token=${props.user.token}`
+        'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(res => setBook(res.data.book))
+      .then(res => setBook(res.data))
       .then(() => msgAlert({
         heading: 'Showing selected book',
         message: messages.showBookSuccess,
         variant: 'primary'
       }))
       .catch(error => {
-        setBook({ title: '', author: '', note: '', rating: '', onWishlist: '', onRead: '' })
+        setBook({ title: '', author: '' })
         msgAlert({
           heading: 'Failed to show book ' + error.message,
           message: messages.showBookFailure,
@@ -33,7 +34,7 @@ const Book = (props) => {
   }, [])
   const destroy = () => {
     axios({
-      url: `${apiUrl}/books/${props.match.params.id}`,
+      url: `${apiUrl}/books/${props.match.params.bookId}/`,
       method: 'DELETE',
       headers: {
         'Authorization': `Token ${props.user.token}`
@@ -66,14 +67,17 @@ const Book = (props) => {
   }
   return (
     <div>
-      <h4>{book.name}</h4>
-      <h2>{book.author}</h2>
+      <h2>{book.title}</h2>
+      <h4>{book.author}</h4>
       <p>{book.note}</p>
       <p>{book.rating}</p>
       <p>{book.onWishlist}</p>
       <p>{book.onRead}</p>
       <div>
         <button className="button btn btn-danger" onClick={destroy}>Delete Book</button>
+      </div>
+      <div>
+        <Link to='/books/'>Back to all books</Link>
       </div>
     </div>
   )
