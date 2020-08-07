@@ -10,23 +10,27 @@ const Books = (props) => {
   const [books, setBooks] = useState([])
 
   const { msgAlert } = props
-
   useEffect(() => {
+    console.log(props)
     axios({
-      url: `${apiUrl}/books/`,
       method: 'GET',
+      url: `${apiUrl}/books/`,
       headers: {
-        'Authorization': `Token token=${props.user.token}`
+        'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(res => setBooks(res.data.books))
+      .then(res => {
+        console.log(res)
+        return res
+      })
+      .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
         message: messages.showBooksSuccess,
         variant: 'primary'
       }))
       .catch(error => {
-        setBooks({ title: '', author: '', note: '', rating: '', onWishlist: '', onRead: '' })
+        setBooks({ title: '', author: '' })
         msgAlert({
           head: 'Failed to show all books ' + error.message,
           message: messages.showBooksFailure,
@@ -34,10 +38,10 @@ const Books = (props) => {
         })
       })
   }, [])
-
+  console.log(books)
   const booksJsx = books.map(book => (
-    <li key={book._id}>
-      <Link to={`/books/${book._id}/`}>{book.title}</Link>
+    <li key={book.id}>
+      <Link to={`/books/${book.id}/`}>{book.title}</Link>
     </li>
   ))
 
@@ -49,7 +53,7 @@ const Books = (props) => {
           {booksJsx}
         </div>
       </div>
-      <Link to={'/add-books'}>
+      <Link to={'/create-book/'}>
         <button>Add Book</button>
       </Link>
     </div>

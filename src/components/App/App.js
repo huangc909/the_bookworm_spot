@@ -10,6 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import Books from './../routes/Books'
+import Book from './../routes/Book'
 
 class App extends Component {
   constructor () {
@@ -49,8 +50,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password/' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute exact user={user} path='/books/' render={(props) => (
+          <AuthenticatedRoute user={user} exact path='/books/' render={(props) => (
             <Books {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/books/:bookId' render={(props) => (
+            <Book {...props} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         {msgAlerts.map((msgAlert, index) => (
