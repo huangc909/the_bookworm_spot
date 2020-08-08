@@ -14,6 +14,7 @@ import Book from './../routes/Book'
 import BookCreate from './../routes/BookCreate'
 import BookEdit from './../routes/BookEdit'
 import WishList from './../routes/WishList'
+import ReadBooks from './../routes/ReadBooks'
 
 class App extends Component {
   constructor () {
@@ -67,6 +68,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/wishlist/' render={(props) => (
             <WishList {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/readbooks/' render={(props) => (
+            <ReadBooks {...props} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         {msgAlerts.map((msgAlert, index) => (
