@@ -65,17 +65,31 @@ const Book = (props) => {
       }} />
     )
   }
+
+  const wishlistIndicator = () => {
+    if (book.onWishlist === false) {
+      return 'Not on wishlist'
+    } else {
+      return 'On wishlist'
+    }
+  }
+
   return (
     <div>
       <h2>{book.title}</h2>
       <h4>{book.author}</h4>
       <p>{book.rating}</p>
-      <p>{book.note}</p>
-      <p>{book.onWishlist}</p>
+      <p>{book.note}<div><p>hi</p></div></p>
+      <div>
+        <p>Added to Wishlist</p>
+      </div>
+      <div>
+        <p>{wishlistIndicator}</p>
+      </div>
       <p>{book.onRead}</p>
       <div>
         <button className="button btn btn-danger" onClick={destroy}>Delete Book</button>
-        <Link to={`/books/${props.match.params.bookId}/edit`}>
+        <Link to={`/books/${props.match.params.bookId}/edit`} book={book}>
           <button className="button btn btn-success">Edit Book</button>
         </Link>
       </div>

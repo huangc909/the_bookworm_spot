@@ -15,15 +15,35 @@ const BookCreate = props => {
     onWishlist: false,
     onRead: false
   })
-  const [createdBookId, setCreatedBookId] = useState(null)
-  const handleChange = event => {
-    const updatedField = { [event.target.name]: event.target.value }
 
+  const [createdBookId, setCreatedBookId] = useState(null)
+
+  const wishList = () => {
+    if (book.onWishlist === false) {
+      book.onWishlist = true
+    } else {
+      book.onWishlist = false
+    }
+    return book.onWishlist
+  }
+
+  const read = () => {
+    if (book.onRead === false) {
+      book.onRead = true
+    } else {
+      book.onRead = false
+    }
+    return book.onRead
+  }
+
+  const handleChange = event => {
+    const updatedField = { [event.target.name]: event.target.value, wishList, read }
     const editedBook = Object.assign({}, book, updatedField)
     setBook(editedBook)
   }
-
+  console.log(setBook)
   const handleSubmit = event => {
+    console.log(book)
     event.preventDefault()
     const { msgAlert } = props
     axios({
@@ -49,6 +69,7 @@ const BookCreate = props => {
         })
       })
   }
+  console.log(book)
   if (createdBookId) {
     return <Redirect to={`/books/${createdBookId}`} />
   }
@@ -57,6 +78,8 @@ const BookCreate = props => {
     <div>
       <BookForm
         book={book}
+        wishList={wishList}
+        read={read}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath='/books/'

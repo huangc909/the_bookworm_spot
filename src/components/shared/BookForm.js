@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BookForm = ({ book, handleSubmit, handleChange, cancelPath }) => (
+const BookForm = ({ props, book, handleSubmit, handleChange, cancelPath, wishList, read }) => (
+
   <form onSubmit={handleSubmit}>
     <div>
       <label>Title</label>
@@ -36,24 +37,25 @@ const BookForm = ({ book, handleSubmit, handleChange, cancelPath }) => (
       />
     </div>
     <div>
-      <label>Add to Wishlist</label>
+      <p>Add to Wishlist</p>
       <input
+        book={book}
         type="checkbox"
         value={book.onWishlist}
-        name="onWishlist"
-        onChange={handleChange}
+        name="wishlist"
+        onChange={wishList}
       />
     </div>
     <div>
-      <label>Mark as Read</label>
+      <p>Mark as Read</p>
       <input
+        book={book}
         type="checkbox"
         value={book.onRead}
-        name="onRead"
-        onChange={handleChange}
+        name="read"
+        onChange={read}
       />
     </div>
-    <br />
     <button type="submit" className="btn btn-primary">Submit</button>
     <Link to={cancelPath}>
       <button className="btn btn-danger">Cancel</button>
