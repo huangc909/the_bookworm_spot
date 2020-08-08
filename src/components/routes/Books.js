@@ -39,6 +39,7 @@ const Books = (props) => {
       })
   }, [])
   console.log(books)
+
   const booksJsx = books.map(book => (
     <li key={book.id}>
       <Link to={`/books/${book.id}/`}>{book.title}</Link>
@@ -50,7 +51,9 @@ const Books = (props) => {
       <h4>My Books</h4>
       <div>
         <div>
-          {booksJsx}
+          <ol>
+            {booksJsx}
+          </ol>
         </div>
       </div>
       <Link to={'/create-book/'}>
