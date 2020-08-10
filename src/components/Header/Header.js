@@ -19,16 +19,11 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-// const alwaysOptions = (
-//   <Fragment>
-//     <Nav.Link to="/">Home</Nav.Link>
-//   </Fragment>
-// )
-
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
     <Navbar.Brand href="#books/">
-      the_bookworm_spot
+      <img src="https://user-images.githubusercontent.com/53062479/89750722-2c863380-da9b-11ea-9da6-89b6cd205fa3.gif" alt="Logo" className='logo'/>
+      The BookWorm Spot
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
