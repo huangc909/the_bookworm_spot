@@ -71,7 +71,7 @@ const BookCreate = props => {
   }
   console.log(book)
   if (createdBookId) {
-    return <Redirect to={`/books/${createdBookId}`} />
+    return <Redirect to={`/books/${createdBookId}/`} />
   }
 
   return (

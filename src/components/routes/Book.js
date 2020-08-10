@@ -65,11 +65,13 @@ const Book = (props) => {
       }} />
     )
   }
+  console.log(book)
+  console.log(setBook)
 
   return (
     <div>
       <h2>{book.title}</h2>
-      <h4>{book.author}</h4>
+      <h4>by {book.author}</h4>
       <p>{book.rating}</p>
       <p>{book.note}</p>
       <div>
@@ -84,7 +86,9 @@ const Book = (props) => {
       </div>
       <div>
         <button className="button btn btn-danger" onClick={destroy}>Delete Book</button>
-        <Link to={`/books/${props.match.params.bookId}/edit`} book={book}>
+        <Link to={`/books/${props.match.params.bookId}/edit`}
+          book={book}
+        >
           <button className="button btn btn-success">Edit Book</button>
         </Link>
       </div>
