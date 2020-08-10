@@ -10,10 +10,14 @@ export default {
   createBookFailure: 'Failed to add book',
   showBooksSuccess: 'Showing all of your books',
   showBooksFailure: 'Failed to show all of your books',
-  showBookSuccess: 'You are not viewing your selected book',
+  showBookSuccess: 'You are now viewing your selected book',
   showBookFailure: 'Please try to show your selected book again',
-  editBookSuccess: 'Your book as been successfully edited',
+  editBookSuccess: 'Your book has been successfully edited',
   editBookFailure: 'Failed to update your book',
   deleteBookSuccess: 'Book deleted successfully',
-  deleteBookFailure: 'Book failed to delete'
+  deleteBookFailure: 'Book failed to delete',
+  showWishListSuccess: 'Showing your Wishlist',
+  showWishListFailure: 'Failed to show your Wishlist',
+  showReadBooksSuccess: 'Showing your Read Books',
+  showReadBooksFailure: 'Failed to show your Read Books'
 }

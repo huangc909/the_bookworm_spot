@@ -26,14 +26,14 @@ const ReadBooks = (props) => {
       .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
-        message: messages.showBooksSuccess,
+        message: messages.showReadBooksSuccess,
         variant: 'primary'
       }))
       .catch(error => {
         setBooks({ title: '', author: '' })
         msgAlert({
           head: 'Failed to show all books ' + error.message,
-          message: messages.showBooksFailure,
+          message: messages.showReadBooksFailure,
           variant: 'danger'
         })
       })
