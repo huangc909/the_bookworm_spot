@@ -51,10 +51,10 @@ const ReadBooks = (props) => {
   ))
 
   return (
-    <div>
-      <h4>My Books</h4>
+    <div className="list-style">
+      <h4>Books Already Read</h4>
       <div>
-        <div>
+        <div className="list-display">
           <ol>
             {readBooks}
           </ol>

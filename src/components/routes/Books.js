@@ -47,10 +47,10 @@ const Books = (props) => {
   ))
 
   return (
-    <div>
+    <div className="list-style">
       <h4>My Books</h4>
       <div>
-        <div>
+        <div className="list-display">
           <ol>
             {booksJsx}
           </ol>
