@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -55,18 +55,16 @@ class SignUp extends Component {
           <h3>Sign Up</h3>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Email"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
               <Form.Control
                 required
                 name="password"
@@ -77,7 +75,6 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
               <Form.Control
                 required
                 name="passwordConfirmation"
@@ -94,6 +91,9 @@ class SignUp extends Component {
               Submit
             </Button>
           </Form>
+          <Link to='/sign-in/'>
+            <p>I already have an account</p>
+          </Link>
         </div>
       </div>
     )
