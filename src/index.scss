@@ -4,3 +4,101 @@
   height: 80px;
   width: 60px;
 }
+
+.book-image {
+  height: 200px;
+  width: 180px;
+}
+
+.button {
+  border-radius: 20px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.list-style {
+  text-align: center;
+  border: 5px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  border-style: groove;
+  background-color: #4FADFF;
+  max-width: calc(100vh - 30vh);
+}
+
+ol {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  text-align: center;
+}
+
+.list-display {
+  display: inline-block;
+  text-align: left;
+}
+
+.book-image-div {
+  text-align: right;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.book-detail {
+  margin-top: 10px;
+}
+
+.align-right {
+  float: right;
+}
+
+.wishlist {
+  padding-right: 30px;
+  padding-left: 0px;
+}
+
+.checkbox-info {
+  display: block;
+  padding: 0px, 0px, 0px, 100px;
+}
+
+.wishlist-row {
+  float: right;
+}
+
+.readlist-row {
+  float: right;
+}
+
+.wishlist-box {
+  float: right;
+}
+
+.wishlist-marker {
+  text-align: center;
+  border: 2px solid black;
+  width: 23px;
+  height: 27px;
+}
+
+.readlist {
+  padding-right: 30px;
+  padding-left: 0px;
+}
+
+.readlist-box {
+  float: right;
+}
+
+.readlist-marker {
+  text-align: center;
+  border: 2px solid black;
+  width: 23px;
+  height: 27px;
+}
