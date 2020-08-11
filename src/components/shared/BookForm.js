@@ -31,6 +31,7 @@ const BookForm = ({ props, book, handleSubmit, handleChange, cancelPath, wishLis
     <div>
       <label>My Rating</label>
       <input
+        placeholder="0-5"
         value={book.rating}
         name="rating"
         onChange={handleChange}
@@ -56,7 +57,7 @@ const BookForm = ({ props, book, handleSubmit, handleChange, cancelPath, wishLis
         onChange={read}
       />
     </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-primary button">Submit</button>
     <Link to={cancelPath}>
       <button className="btn btn-danger">Cancel</button>
     </Link>

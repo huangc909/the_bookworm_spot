@@ -51,8 +51,8 @@ const WishList = (props) => {
   ))
 
   return (
-    <div>
-      <h4>My Books</h4>
+    <div className="resources">
+      <h4>My Wishlist Books</h4>
       <div>
         <div>
           <ol>

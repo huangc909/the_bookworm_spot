@@ -73,6 +73,7 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
+              className="button"
               variant="primary"
               type="submit"
             >
@@ -80,7 +81,7 @@ class SignIn extends Component {
             </Button>
           </Form>
           <Link to='/sign-up/'>
-            <p>I don&quot;t have an account yet</p>
+            <p>{'I don\'t have an account yet'}</p>
           </Link>
         </div>
       </div>

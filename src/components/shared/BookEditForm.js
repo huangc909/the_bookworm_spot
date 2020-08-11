@@ -61,7 +61,7 @@ const BookEditForm = ({ props, book, handleSubmit, handleChange, cancelPath, wis
         onChange={read}
       />
     </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-primary button">Submit</button>
     <Link to={cancelPath}>
       <button className="btn btn-danger">Cancel</button>
     </Link>
