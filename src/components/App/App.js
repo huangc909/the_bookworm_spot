@@ -45,7 +45,7 @@ class App extends Component {
         <Header user={user} />
 
         <main className="container">
-          <Route exact path='/all-books/' render={(props) => (
+          <Route exact path='/' render={(props) => (
             <AllBooks {...props} msgAlert={this.msgAlert} user={user}/>
           )} />
           <Route exact path='/all-books-detail/:bookId/' render={(props) => (

@@ -34,7 +34,7 @@ const unauthenticatedOptions = (
 
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#all-books/">
+    <Navbar.Brand href="#/">
       <img src="https://user-images.githubusercontent.com/53062479/89816393-824af200-db14-11ea-83cc-42714d271694.gif" alt="Logo" className='logo'/>
       The BookWorm Spot
     </Navbar.Brand>

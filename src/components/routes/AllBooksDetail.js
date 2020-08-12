@@ -54,7 +54,7 @@ const AllBooksDetail = (props, cancelPath) => {
           <br />
         </div>
         <div className="col-md-12 center">
-          <Link to='/all-books/'>
+          <Link to='/'>
             <p>Go Back</p>
           </Link>
         </div>
