@@ -42,6 +42,7 @@ const Books = (props) => {
 
   const booksJsx = books.map(book => (
     <li key={book.id}>
+      <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
       <Link to={`/books/${book.id}/`}>{book.title}</Link>
     </li>
   ))
