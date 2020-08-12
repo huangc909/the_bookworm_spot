@@ -66,7 +66,7 @@ const AllBooks = (props) => {
 
   return (
     <div>
-      <h4>Book Recently Added</h4>
+      <h4>Recently Added</h4>
       <div>
         <ol>
           {booksJsx}
