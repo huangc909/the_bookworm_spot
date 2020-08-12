@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: '',
+  production: 'https://the-bookworm-spot-api.herokuapp.com',
   development: 'http://localhost:8000'
 }
 

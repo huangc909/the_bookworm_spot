@@ -27,7 +27,8 @@
     "test": "node scripts/test.js --env=jsdom",
     "make-standard": "eslint --fix ./src;exit 0",
     "nag": "eslint ./src;exit 0",
-    "deploy": "sh scripts/deploy.sh"
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -94,6 +95,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "node-sass": "^4.9.3",
