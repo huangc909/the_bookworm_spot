@@ -15,6 +15,7 @@ const Book = (props) => {
       method: 'GET',
       headers: {
         'Authorization': `Token ${props.user.token}`
+        // 'Content-Type': 'application/json'
       }
     })
       .then(res => setBook(res.data))
@@ -101,8 +102,8 @@ const Book = (props) => {
                   </div>
                 </div>
               </div>
-
             </div>
+
           </div>
         </div>
         <div className="col-md-6 book-detail">
@@ -116,7 +117,7 @@ const Book = (props) => {
 
         </div>
       </div>
-      <div className="buttons">
+      <div className="center">
         <div>
           <Link to={`/books/${props.match.params.bookId}/edit`}
             book={book}
