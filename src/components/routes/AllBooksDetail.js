@@ -51,6 +51,7 @@ const AllBooksDetail = (props, cancelPath) => {
           <h2>{book.title}</h2>
           <h4>by {book.author}</h4>
           <p>Rating: {book.rating}/5.0</p>
+          <p>Created by: User #{book.owner}</p>
           <br />
         </div>
         <div className="col-md-12 center">
