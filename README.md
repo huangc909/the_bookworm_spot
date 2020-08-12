@@ -5,9 +5,9 @@ A Specific Book Page
 The BookWorm Spot app provides users a space to store their personal reading experience by being able to add books into the app, record a note for each book, and check off whether or not the book is on their wishlist and/or has been read already.
 
 ## Links
-- [Link to deployed site]()
-- [Back End API Repository](https://github.com/huangc909/the_bookworm_spot_api)
-- [Backend API URL]()
+- [Deployed Application](https://huangc909.github.io/the_bookworm_spot/)
+- [Backend API Repository](https://github.com/huangc909/the_bookworm_spot_api)
+- [Backend API URL](https://git.heroku.com/the-bookworm-spot-api.git)
 
 ## Planning/Coding Experience
 I first started with creating the user stories for my app. Afterwards, I began to work on the wireframes and ERD. Then, I started to code the backend using Django and Python. Once I tested out the MVP features, I began to work on the front end using React Hooks.
