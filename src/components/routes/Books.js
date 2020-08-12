@@ -42,14 +42,24 @@ const Books = (props) => {
 
   const booksJsx = books.map(book => (
     <li key={book.id}>
-      <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
-      <Link to={`/books/${book.id}/`}>{book.title}</Link>
+      <div className="photo-and-title">
+        <div>
+          <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
+        </div>
+        <div className="book-title">
+          <Link to={`/books/${book.id}/`} >{book.title}</Link>
+        </div>
+      </div>
     </li>
   ))
 
   return (
     <div className="list-style">
-      <h4>My Books</h4>
+      <h1>My Books</h1>
+      <br/>
+      <Link to={'/create-book/'}>
+        <button className="button">Add Book</button>
+      </Link>
       <div>
         <div className="list-display">
           <ol>
@@ -57,9 +67,6 @@ const Books = (props) => {
           </ol>
         </div>
       </div>
-      <Link to={'/create-book/'}>
-        <button className="button">Add Book</button>
-      </Link>
     </div>
   )
 }

@@ -16,6 +16,8 @@ const authenticatedOptions = (
     alignRight
     title="My Account"
     id="dropdown-menu-align-right"
+    className="drop-down"
+    variant="secondary"
   >
     <Dropdown.Item href="#books/">My Books</Dropdown.Item>
     <Dropdown.Item href="#wishlist/">Wishlist</Dropdown.Item>
@@ -33,10 +35,16 @@ const unauthenticatedOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar variant="dark" expand="md" className="navBar">
     <Navbar.Brand href="#/">
-      <img src="https://user-images.githubusercontent.com/53062479/89816393-824af200-db14-11ea-83cc-42714d271694.gif" alt="Logo" className='logo'/>
-      The BookWorm Spot
+      <div className="logo-and-name">
+        <div>
+          <img src="https://user-images.githubusercontent.com/53062479/89816393-824af200-db14-11ea-83cc-42714d271694.gif" alt="Logo" className='logo'/>
+        </div>
+        <div>
+          <p className="app-name">The <br/> BookWorm <br/>Spot</p>
+        </div>
+      </div>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

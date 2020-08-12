@@ -46,13 +46,24 @@ const WishList = (props) => {
 
   const wishListBooks = findWishlistBooks.map(book => (
     <li key={book.id}>
-      <Link to={`/books/${book.id}/`}>{book.title}</Link>
+      <div className="photo-and-title">
+        <div>
+          <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
+        </div>
+        <div className="book-title">
+          <Link to={`/books/${book.id}/`}>{book.title}</Link>
+        </div>
+      </div>
     </li>
   ))
 
   return (
-    <div className="resources">
-      <h4>My Wishlist Books</h4>
+    <div className="list-style">
+      <h1>My Wishlist Books</h1>
+      <br/>
+      <Link to={'/create-book/'}>
+        <button>Add Book</button>
+      </Link>
       <div>
         <div>
           <ol>
@@ -60,9 +71,6 @@ const WishList = (props) => {
           </ol>
         </div>
       </div>
-      <Link to={'/create-book/'}>
-        <button>Add Book</button>
-      </Link>
     </div>
   )
 }

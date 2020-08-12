@@ -48,41 +48,43 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
-            <Form.Group controlId="email">
-              <Form.Control
-                required
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Email"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Control
-                required
-                name="password"
-                value={password}
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Button
-              className="button"
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </Form>
-          <Link to='/sign-up/'>
-            <p>{'I don\'t have an account yet'}</p>
-          </Link>
+      <div className="list-style">
+        <div className="row">
+          <div className="col-sm-10 col-md-8 mx-auto mt-5">
+            <h1>Sign In</h1>
+            <Form onSubmit={this.onSignIn}>
+              <Form.Group controlId="email">
+                <Form.Control
+                  required
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Control
+                  required
+                  name="password"
+                  value={password}
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Button
+                className="button"
+                variant="primary"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </Form>
+            <Link to='/sign-up/'>
+              <p>{'I don\'t have an account yet'}</p>
+            </Link>
+          </div>
         </div>
       </div>
     )

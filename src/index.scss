@@ -1,4 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&display=swap');
 
 body {
   background-image: url('https://user-images.githubusercontent.com/53062479/89965648-4babcf00-dc1b-11ea-8a9d-ac3c417b90ab.jpg');
@@ -9,9 +12,25 @@ body {
   background-size: cover;
 }
 
+.navBar {
+  background-color: #34568A;
+  height: 100px;
+}
+
+.app-name {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 15px;
+}
+
+.logo-and-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
-  height: 80px;
-  width: 60px;
+  height: 95px;
+  width: 70px;
 }
 
 .book-image {
@@ -29,14 +48,17 @@ body {
 }
 
 .list-style {
+  align-items: center;
   text-align: center;
-  border: 5px solid #000000;
+  border: 3px grey;
   border-radius: 10px;
-  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin: auto;
+  margin-top: 20px;
   border-style: groove;
-  background-color: #4FADFF;
-  max-width: calc(100vh - 30vh);
+  background-color: #FFFFFF;
+  max-width: calc(100vh - 5vh);
 }
 
 .list-display {
@@ -52,6 +74,16 @@ ol {
 
 li {
   text-align: left;
+  margin-bottom: 10px;
+}
+
+img {
+  margin-right: 10px;
+}
+
+.all-books {
+  list-style: none;
+
 }
 
 .book-image-div {
@@ -111,4 +143,26 @@ li {
   border: 2px solid black;
   width: 23px;
   height: 27px;
+}
+
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 60px;
+}
+
+.photo-and-title {
+  display: flex;
+  margin-top: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.book-title {
+  font-size: 25px;
+  padding-left: 10px;
+  font-family: 'Mallanna', sans-serif;
+}
+
+.link-title {
+  color: #000000;
 }

@@ -51,9 +51,15 @@ const AllBooks = (props) => {
   // }
 
   const booksJsx = books.reverse().map(book => (
-    <li key={book.id}>
-      <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
-      <Link to={`/all-books-detail/${book.id}/`}>{book.title}</Link>
+    <li key={book.id} className="all-books">
+      <div className="photo-and-title">
+        <div>
+          <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
+        </div>
+        <div className="book-title">
+          <Link to={`/all-books-detail/${book.id}/`} className="link-title">{book.title}</Link>
+        </div>
+      </div>
     </li>
   ))
 
@@ -65,8 +71,9 @@ const AllBooks = (props) => {
   // ))
 
   return (
-    <div>
-      <h4>Recently Added</h4>
+    <div className="list-style">
+      <h1>Recently Added Books</h1>
+      <br/>
       <div>
         <ol>
           {booksJsx}
