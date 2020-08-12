@@ -22,7 +22,7 @@ const authenticatedOptions = (
     <Dropdown.Item href="#books/">My Books</Dropdown.Item>
     <Dropdown.Item href="#wishlist/">Wishlist</Dropdown.Item>
     <Dropdown.Item href="#readbooks/">Read Books</Dropdown.Item>
-    <Dropdown.Item href="#change-password/">Change Password</Dropdown.Item>
+    <Dropdown.Item href="#change-pw/">Change Password</Dropdown.Item>
     <Dropdown.Item href="#sign-out/">Sign Out</Dropdown.Item>
   </DropdownButton>
 )
