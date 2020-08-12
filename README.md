@@ -51,14 +51,18 @@ Some unsolved problems that I would like to go back to are:
 Wireframes
 ![The_BookWorm_Spot_MVP_Wireframes](https://media.git.generalassemb.ly/user/28180/files/afa63300-d703-11ea-8cae-87af2f1206d7)
 
+
 Main Page
 ![The_BookWorm_Spot_Main_Page](https://user-images.githubusercontent.com/53062479/89978240-0f886680-dc3b-11ea-8631-8fe5b9c001e9.png)
+
 
 Sign-in Page
 ![The_BookWorm_Spot_Sign-In](https://user-images.githubusercontent.com/53062479/89978115-c33d2680-dc3a-11ea-88e7-ac3d50351ad2.png)
 
-Upon Sign-in
-![The_BookWorm_Spot_Upon_Sign_In](https://user-images.githubusercontent.com/53062479/89977928-54f86400-dc3a-11ea-9607-fce32447b166.png)
+
+Upon Sign-in with DropDown Menu Clicked
+![The_BookWorm_Spot_Upon_Sign_In_with_DropDown_Menu_Clicked](https://user-images.githubusercontent.com/53062479/89977928-54f86400-dc3a-11ea-9607-fce32447b166.png)
+
 
 A Specific Book Page
 ![The_BookWorm_Spot_Book](https://user-images.githubusercontent.com/53062479/89978237-0eefd000-dc3b-11ea-9dc1-81ccb569522b.png)
