@@ -1,6 +1,6 @@
 {
   "name": "the_bookworm_spot",
-  "homepage": "https://github.com/huangc909/the_bookworm_spot",
+  "homepage": "https://github.com/huangc909/the_bookworm_spot/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -95,7 +95,6 @@
     "eslint-plugin-standard": "^4.0.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
-    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "node-sass": "^4.9.3",
