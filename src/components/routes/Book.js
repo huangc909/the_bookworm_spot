@@ -8,7 +8,7 @@ const Book = (props) => {
   const [book, setBook] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-  console.log(props)
+  // console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/books/${props.match.params.bookId}/`,
@@ -66,8 +66,8 @@ const Book = (props) => {
       }} />
     )
   }
-  console.log(book)
-  console.log(setBook)
+  // console.log(book)
+  // console.log(setBook)
 
   return (
     <div className="container">

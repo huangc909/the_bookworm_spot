@@ -10,9 +10,9 @@ const AllBooks = (props) => {
   const [books, setBooks] = useState([])
 
   const { msgAlert } = props
-  console.log(props)
+  // console.log(props)
   useEffect(() => {
-    console.log(props)
+    // console.log(props)
     axios({
       method: 'GET',
       url: `${apiUrl}/all-books/`,
@@ -21,11 +21,11 @@ const AllBooks = (props) => {
       }
     })
       .then(res => {
-        console.log(res)
+        // console.log(res)
         return res
       })
       .then(res => {
-        console.log(res)
+        // console.log(res)
         return res
       })
       .then(res => setBooks(res.data))
@@ -38,7 +38,7 @@ const AllBooks = (props) => {
         })
       })
   }, [])
-  console.log(books)
+  // console.log(books)
 
   // const showBook = (props) => {
   //   books.map(book => {
@@ -57,7 +57,10 @@ const AllBooks = (props) => {
           <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
         </div>
         <div className="book-title">
-          <Link to={`/all-books-detail/${book.id}/`} className="link-title">{book.title}</Link>
+          <Link to={`/all-books-detail/${book.id}/`} className="link-title">
+            <div><h2>{book.title}</h2></div>
+          </Link>
+          <div><p>by {book.author}</p></div>
         </div>
       </div>
     </li>

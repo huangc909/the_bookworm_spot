@@ -21,8 +21,8 @@ The BookWorm Spot app provides users a space to store their personal reading exp
 - As a user, I can sign out of my account
 - As a user, I can view all of my books
 - As a user, I can view a single book
-- As a user, I can create a book with title, author, notes, and mark if the book is added to my wishlist and/or the book has been read
-- As a user, I can edit a book’s title, author, notes, and mark if the book is added to my wishlist and/or the book has been read
+- As a user, I can create a book with title, author, notes, and mark if the book has been added to my wishlist and/or the book has been read
+- As a user, I can edit a book’s title, author, notes, and mark if the book has been added to my wishlist and/or the book has been read
 - As a user, I can delete a book
 - As a user, I can view my wishlist books
 - As a user, I can view my already read books

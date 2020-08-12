@@ -11,7 +11,7 @@ const ReadBooks = (props) => {
 
   const { msgAlert } = props
   useEffect(() => {
-    console.log(props)
+    // console.log(props)
     axios({
       method: 'GET',
       url: `${apiUrl}/books/`,
@@ -19,10 +19,10 @@ const ReadBooks = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(res => {
-        console.log(res)
-        return res
-      })
+      // .then(res => {
+      //   console.log(res)
+      //   return res
+      // })
       .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
@@ -38,11 +38,11 @@ const ReadBooks = (props) => {
         })
       })
   }, [])
-  console.log(books)
+  // console.log(books)
 
   const findReadBooks = books.filter(book => book.onRead === true)
 
-  console.log(findReadBooks)
+  // console.log(findReadBooks)
 
   const readBooks = findReadBooks.map(book => (
     <li key={book.id}>
@@ -51,7 +51,7 @@ const ReadBooks = (props) => {
           <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
         </div>
         <div className="book-title">
-          <Link to={`/books/${book.id}/`}>{book.title}</Link>
+          <Link to={`/books/${book.id}/`} className="link-title">{book.title}</Link>
         </div>
       </div>
     </li>
@@ -62,7 +62,7 @@ const ReadBooks = (props) => {
       <h1>Books Already Read</h1>
       <br/>
       <Link to={'/create-book/'}>
-        <button className="button">Add Book</button>
+        <button className="button" variant="primary">Add Book</button>
       </Link>
       <div>
         <div className="list-display">

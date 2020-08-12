@@ -6,7 +6,7 @@ import BookEditForm from '../shared/BookEditForm'
 import messages from './../AutoDismissAlert/messages'
 
 const BookEdit = (props) => {
-  console.log(props)
+  // console.log(props)
   const [book, setBook] = useState({
     title: '',
     author: '',
@@ -26,15 +26,15 @@ const BookEdit = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(res => {
-        console.log(res)
-        return res
-      })
+      // .then(res => {
+      //   console.log(res)
+      //   return res
+      // })
       .then(res => setBook(res.data))
       .catch(console.error)
   }, [])
 
-  console.log(book)
+  // console.log(book)
   const wishList = () => {
     if (book.onWishlist === false) {
       book.onWishlist = true
@@ -63,8 +63,8 @@ const BookEdit = (props) => {
   }
 
   const handleSubmit = event => {
-    console.log(book)
-    console.log(props)
+    // console.log(book)
+    // console.log(props)
     event.preventDefault()
     axios({
       url: `${apiUrl}/books/${props.match.params.bookId}/`,
@@ -92,7 +92,7 @@ const BookEdit = (props) => {
   if (updated) {
     return <Redirect to={`/books/${props.match.params.bookId}/`} />
   }
-  console.log(book)
+  // console.log(book)
   return (
     <div>
       <BookEditForm

@@ -11,7 +11,7 @@ const WishList = (props) => {
 
   const { msgAlert } = props
   useEffect(() => {
-    console.log(props)
+    // console.log(props)
     axios({
       method: 'GET',
       url: `${apiUrl}/books/`,
@@ -19,10 +19,10 @@ const WishList = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(res => {
-        console.log(res)
-        return res
-      })
+      // .then(res => {
+      //   console.log(res)
+      //   return res
+      // })
       .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
@@ -38,11 +38,11 @@ const WishList = (props) => {
         })
       })
   }, [])
-  console.log(books)
+  // console.log(books)
 
   const findWishlistBooks = books.filter(book => book.onWishlist === true)
 
-  console.log(findWishlistBooks)
+  // console.log(findWishlistBooks)
 
   const wishListBooks = findWishlistBooks.map(book => (
     <li key={book.id}>
@@ -51,7 +51,7 @@ const WishList = (props) => {
           <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
         </div>
         <div className="book-title">
-          <Link to={`/books/${book.id}/`}>{book.title}</Link>
+          <Link to={`/books/${book.id}/`} className="link-title">{book.title}</Link>
         </div>
       </div>
     </li>
@@ -62,7 +62,7 @@ const WishList = (props) => {
       <h1>My Wishlist Books</h1>
       <br/>
       <Link to={'/create-book/'}>
-        <button>Add Book</button>
+        <button className="button" variant="primary">Add Book</button>
       </Link>
       <div>
         <div>

@@ -16,21 +16,21 @@ const authenticatedOptions = (
     alignRight
     title="My Account"
     id="dropdown-menu-align-right"
-    className="drop-down"
+    className="menu-item"
     variant="secondary"
   >
-    <Dropdown.Item href="#books/">My Books</Dropdown.Item>
-    <Dropdown.Item href="#wishlist/">Wishlist</Dropdown.Item>
-    <Dropdown.Item href="#readbooks/">Read Books</Dropdown.Item>
-    <Dropdown.Item href="#change-pw/">Change Password</Dropdown.Item>
-    <Dropdown.Item href="#sign-out/">Sign Out</Dropdown.Item>
+    <Dropdown.Item href="#books/" className="menu-item">My Books</Dropdown.Item>
+    <Dropdown.Item href="#wishlist/" className="menu-item">Wishlist</Dropdown.Item>
+    <Dropdown.Item href="#readbooks/" className="menu-item">Read Books</Dropdown.Item>
+    <Dropdown.Item href="#change-pw/" className="menu-item">Change Password</Dropdown.Item>
+    <Dropdown.Item href="#sign-out/" className="menu-item">Sign Out</Dropdown.Item>
   </DropdownButton>
 )
 
 const unauthenticatedOptions = (
   <Fragment>
     {/* <Nav.Link href="#sign-up/">Sign Up</Nav.Link> */}
-    <Nav.Link href="#sign-in/">Sign In</Nav.Link>
+    <Nav.Link href="#sign-in/" className="menu-item">Sign In</Nav.Link>
   </Fragment>
 )
 

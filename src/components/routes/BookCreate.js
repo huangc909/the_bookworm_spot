@@ -41,9 +41,9 @@ const BookCreate = props => {
     const editedBook = Object.assign({}, book, updatedField)
     setBook(editedBook)
   }
-  console.log(setBook)
+  // console.log(setBook)
   const handleSubmit = event => {
-    console.log(book)
+    // console.log(book)
     event.preventDefault()
     const { msgAlert } = props
     axios({
@@ -69,7 +69,7 @@ const BookCreate = props => {
         })
       })
   }
-  console.log(book)
+  // console.log(book)
   if (createdBookId) {
     return <Redirect to={`/books/${createdBookId}/`} />
   }

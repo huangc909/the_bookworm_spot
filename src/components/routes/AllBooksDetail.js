@@ -7,7 +7,7 @@ import messages from './../AutoDismissAlert/messages'
 const AllBooksDetail = (props, cancelPath) => {
   const [book, setBook] = useState(null)
   const { msgAlert } = props
-  console.log(props)
+  // console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/all-books-detail/${props.match.params.bookId}/`,
@@ -35,8 +35,8 @@ const AllBooksDetail = (props, cancelPath) => {
   if (!book) {
     return <p>Loading...</p>
   }
-  console.log(book)
-  console.log(setBook)
+  // console.log(book)
+  // console.log(setBook)
 
   return (
     <div className="container">
