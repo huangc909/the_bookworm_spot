@@ -16,6 +16,9 @@ import BookEdit from './../routes/BookEdit'
 import WishList from './../routes/WishList'
 import ReadBooks from './../routes/ReadBooks'
 
+import AllBooks from './../routes/AllBooks'
+import AllBooksDetail from './../routes/AllBooksDetail'
+
 class App extends Component {
   constructor () {
     super()
@@ -42,28 +45,34 @@ class App extends Component {
         <Header user={user} />
 
         <main className="container">
-          <Route path='/sign-up/' render={() => (
+          <Route exact path='/all-books/' render={(props) => (
+            <AllBooks {...props} msgAlert={this.msgAlert} user={user}/>
+          )} />
+          <Route exact path='/all-books-detail/:bookId/' render={(props) => (
+            <AllBooksDetail {...props} msgAlert={this.msgAlert} user={user}/>
+          )} />
+          <Route exact path='/sign-up/' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <Route path='/sign-in/' render={() => (
+          <Route exact path='/sign-in/' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/sign-out/' render={() => (
+          <AuthenticatedRoute user={user} exact path='/sign-out/' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password/' render={() => (
+          <AuthenticatedRoute user={user} exact path='/change-password/' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/books/' render={(props) => (
             <Books {...props} msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/books/:bookId' render={(props) => (
+          <AuthenticatedRoute user={user} exact path='/books/:bookId/' render={(props) => (
             <Book {...props} msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/create-book/' render={() => (
             <BookCreate msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/books/:bookId/edit' render={(props) => (
+          <AuthenticatedRoute user={user} exact path='/books/:bookId/edit/' render={(props) => (
             <BookEdit {...props} msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/wishlist/' render={(props) => (
