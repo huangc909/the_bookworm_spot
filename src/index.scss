@@ -1,5 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-image: url('https://user-images.githubusercontent.com/53062479/89965648-4babcf00-dc1b-11ea-8a9d-ac3c417b90ab.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: '100vh';
+  background-size: cover;
+}
+
 .logo {
   height: 80px;
   width: 60px;
@@ -10,11 +19,12 @@
   width: 180px;
 }
 
-.button {
-  border-radius: 20px;
+.center {
+  text-align: center;
 }
 
-.buttons {
+.button {
+  border-radius: 20px;
   text-align: center;
 }
 
@@ -29,6 +39,11 @@
   max-width: calc(100vh - 30vh);
 }
 
+.list-display {
+  display: inline-block;
+  text-align: left;
+}
+
 ol {
   display: inline-block;
   margin-left: auto;
@@ -36,11 +51,6 @@ ol {
 }
 
 li {
-  text-align: center;
-}
-
-.list-display {
-  display: inline-block;
   text-align: left;
 }
 
