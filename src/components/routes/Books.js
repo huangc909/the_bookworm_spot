@@ -57,7 +57,7 @@ const Books = (props) => {
         </div>
       </div>
       <Link to={'/create-book/'}>
-        <button>Add Book</button>
+        <button className="button">Add Book</button>
       </Link>
     </div>
   )
