@@ -73,7 +73,7 @@ const Book = (props) => {
     <div className="container">
       <div className="row">
         <div className="col-md-6 book-image-div">
-          <div className="col-md-6 align-right">
+          <div className="col-md-8 align-right">
             <img src="https://user-images.githubusercontent.com/53062479/89836158-2a23e800-db34-11ea-8fd4-983f002de819.jpg" className="book-image"/>
 
             <div className="checkbox-info">
