@@ -7,7 +7,7 @@ The BookWorm Spot app provides users a space to store their personal reading exp
 ## Links
 - [Deployed Application](https://huangc909.github.io/the_bookworm_spot/)
 - [Backend API Repository](https://github.com/huangc909/the_bookworm_spot_api)
-- [Backend API URL](https://git.heroku.com/the-bookworm-spot-api.git)
+- [Backend API URL](https://the-bookworm-spot-api.herokuapp.com)
 
 ## Planning/Coding Experience
 I first started with creating the user stories for my app. Afterwards, I began to work on the wireframes and ERD. Then, I started to code the backend using Django and Python. Once I tested out the MVP features, I began to work on the front end using React Hooks.
