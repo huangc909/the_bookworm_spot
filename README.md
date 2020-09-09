@@ -19,7 +19,7 @@ Once I finished with the MVP, I went back into Django and added the feature of a
 ## Unsolved Problems
 Some unsolved problems that I would like to go back to are:
 - adding a username property to the user
-- using a cloud-base database to store book covers
+- using a cloud-base database (AWS) to store book covers (images)
 - add authentication when viewing a book (1. owners can view all the information they included in their book while being able to update and delete their book, 2. non-owners can only view limited information and cannot update or delete any books not belonged to them.)
 - stylizing the forms
 
