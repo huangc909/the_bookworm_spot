@@ -7,7 +7,8 @@ import messages from './../AutoDismissAlert/messages'
 const AllBooksDetail = (props, cancelPath) => {
   const [book, setBook] = useState(null)
   const { msgAlert } = props
-  // console.log(props)
+
+  // API Request to view a single book
   useEffect(() => {
     axios({
       url: `${apiUrl}/all-books-detail/${props.match.params.bookId}/`,
@@ -32,11 +33,11 @@ const AllBooksDetail = (props, cancelPath) => {
       })
   }, [])
 
+  // If the API has not/cannot responded,
+  // display the following message
   if (!book) {
     return <p>Loading...</p>
   }
-  // console.log(book)
-  // console.log(setBook)
 
   return (
     <div className="container">

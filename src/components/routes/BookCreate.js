@@ -18,6 +18,9 @@ const BookCreate = props => {
 
   const [createdBookId, setCreatedBookId] = useState(null)
 
+  // If 'Add to Wishlist' checkbox is selected,
+  // change onWishList to true if originally false,
+  // or false if originally true
   const wishList = () => {
     if (book.onWishlist === false) {
       book.onWishlist = true
@@ -27,6 +30,9 @@ const BookCreate = props => {
     return book.onWishlist
   }
 
+  // If 'Mark as Read' checkbox is selected,
+  // change onRead to true if originally false,
+  // or false if originally true
   const read = () => {
     if (book.onRead === false) {
       book.onRead = true
@@ -36,14 +42,15 @@ const BookCreate = props => {
     return book.onRead
   }
 
+  // setting the state with user input information on book form
   const handleChange = event => {
     const updatedField = { [event.target.name]: event.target.value, wishList, read }
     const editedBook = Object.assign({}, book, updatedField)
     setBook(editedBook)
   }
-  // console.log(setBook)
+
+  // API Request to create a new book (created by its user)
   const handleSubmit = event => {
-    // console.log(book)
     event.preventDefault()
     const { msgAlert } = props
     axios({
@@ -69,7 +76,8 @@ const BookCreate = props => {
         })
       })
   }
-  // console.log(book)
+  // If the API has successfully created the book,
+  // redirect the user to the newly created book info page
   if (createdBookId) {
     return <Redirect to={`/books/${createdBookId}/`} />
   }

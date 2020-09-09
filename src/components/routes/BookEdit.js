@@ -18,6 +18,7 @@ const BookEdit = (props) => {
   const [updated, setUpdated] = useState(false)
   const { msgAlert } = props
 
+  // API Request to update a book (created by its user)
   useEffect(() => {
     axios({
       url: `${apiUrl}/books/${props.match.params.bookId}/`,
@@ -26,15 +27,13 @@ const BookEdit = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      // .then(res => {
-      //   console.log(res)
-      //   return res
-      // })
       .then(res => setBook(res.data))
       .catch(console.error)
   }, [])
 
-  // console.log(book)
+  // If 'Add to Wishlist' checkbox is selected,
+  // change onWishList to true if originally false,
+  // or false if originally true
   const wishList = () => {
     if (book.onWishlist === false) {
       book.onWishlist = true
@@ -44,6 +43,9 @@ const BookEdit = (props) => {
     return book.onWishlist
   }
 
+  // If 'Mark as Read' checkbox is selected,
+  // change onRead to true if originally false,
+  // or false if originally true
   const read = () => {
     if (book.onRead === false) {
       book.onRead = true
@@ -53,6 +55,7 @@ const BookEdit = (props) => {
     return book.onRead
   }
 
+  // setting the state with user input information on edit book form
   const handleChange = event => {
     event.persist()
     setBook(prevBook => {
@@ -62,9 +65,8 @@ const BookEdit = (props) => {
     })
   }
 
+  // API Request to update a book (created by its user)
   const handleSubmit = event => {
-    // console.log(book)
-    // console.log(props)
     event.preventDefault()
     axios({
       url: `${apiUrl}/books/${props.match.params.bookId}/`,
@@ -89,10 +91,12 @@ const BookEdit = (props) => {
         })
       })
   }
+  // If the API has successfully updated the book,
+  // redirect the user to the newly created book info page
   if (updated) {
     return <Redirect to={`/books/${props.match.params.bookId}/`} />
   }
-  // console.log(book)
+
   return (
     <div>
       <BookEditForm

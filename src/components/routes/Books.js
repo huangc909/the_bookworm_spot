@@ -10,8 +10,9 @@ const Books = (props) => {
   const [books, setBooks] = useState([])
 
   const { msgAlert } = props
+
+  // API Request to view all books (created by their user)
   useEffect(() => {
-    // console.log(props)
     axios({
       method: 'GET',
       url: `${apiUrl}/books/`,
@@ -19,10 +20,6 @@ const Books = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      // .then(res => {
-      //   console.log(res)
-      //   return res
-      // })
       .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
@@ -38,7 +35,6 @@ const Books = (props) => {
         })
       })
   }, [])
-  // console.log(books)
 
   const booksJsx = books.map(book => (
     <li key={book.id}>

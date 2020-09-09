@@ -8,14 +8,14 @@ const Book = (props) => {
   const [book, setBook] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-  // console.log(props)
+
+  // API Request to view a book created by its user
   useEffect(() => {
     axios({
       url: `${apiUrl}/books/${props.match.params.bookId}/`,
       method: 'GET',
       headers: {
         'Authorization': `Token ${props.user.token}`
-        // 'Content-Type': 'application/json'
       }
     })
       .then(res => setBook(res.data))
@@ -33,6 +33,8 @@ const Book = (props) => {
         })
       })
   }, [])
+
+  // API Request to delete a book created by its user
   const destroy = () => {
     axios({
       url: `${apiUrl}/books/${props.match.params.bookId}/`,
@@ -56,9 +58,13 @@ const Book = (props) => {
         })
       })
   }
+  // If the API has not/cannot responded,
+  // display the following message
   if (!book) {
     return <p>Loading...</p>
   }
+  // If the API has successfully deleted the book,
+  // redirect the user back to their all books page
   if (deleted) {
     return (
       <Redirect to={{
@@ -66,8 +72,6 @@ const Book = (props) => {
       }} />
     )
   }
-  // console.log(book)
-  // console.log(setBook)
 
   return (
     <div className="container">

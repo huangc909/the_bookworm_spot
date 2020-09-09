@@ -9,9 +9,9 @@ import messages from './../AutoDismissAlert/messages'
 const ReadBooks = (props) => {
   const [books, setBooks] = useState([])
 
+  // API Request to view all books (created by their user)
   const { msgAlert } = props
   useEffect(() => {
-    // console.log(props)
     axios({
       method: 'GET',
       url: `${apiUrl}/books/`,
@@ -19,10 +19,6 @@ const ReadBooks = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      // .then(res => {
-      //   console.log(res)
-      //   return res
-      // })
       .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
@@ -38,12 +34,12 @@ const ReadBooks = (props) => {
         })
       })
   }, [])
-  // console.log(books)
 
+  // filter through all of the books created by the user,
+  // find the books that have been read
   const findReadBooks = books.filter(book => book.onRead === true)
 
-  // console.log(findReadBooks)
-
+  // display each of the read books
   const readBooks = findReadBooks.map(book => (
     <li key={book.id}>
       <div className="photo-and-title">

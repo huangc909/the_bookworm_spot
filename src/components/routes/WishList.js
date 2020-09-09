@@ -10,8 +10,9 @@ const WishList = (props) => {
   const [books, setBooks] = useState([])
 
   const { msgAlert } = props
+
+  // API Request to view all books (created by their user)
   useEffect(() => {
-    // console.log(props)
     axios({
       method: 'GET',
       url: `${apiUrl}/books/`,
@@ -19,10 +20,6 @@ const WishList = (props) => {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      // .then(res => {
-      //   console.log(res)
-      //   return res
-      // })
       .then(res => setBooks(res.data))
       .then(() => msgAlert({
         heading: 'Showing all books',
@@ -38,12 +35,12 @@ const WishList = (props) => {
         })
       })
   }, [])
-  // console.log(books)
 
+  // filter through all of the books created by the user,
+  // find the books that are on the wish list
   const findWishlistBooks = books.filter(book => book.onWishlist === true)
 
-  // console.log(findWishlistBooks)
-
+  // display each of the wishlist books
   const wishListBooks = findWishlistBooks.map(book => (
     <li key={book.id}>
       <div className="photo-and-title">

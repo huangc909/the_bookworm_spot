@@ -10,9 +10,8 @@ const AllBooks = (props) => {
   const [books, setBooks] = useState([])
 
   const { msgAlert } = props
-  // console.log(props)
   useEffect(() => {
-    // console.log(props)
+    // API Request to view all books from all users
     axios({
       method: 'GET',
       url: `${apiUrl}/all-books/`,
@@ -20,14 +19,6 @@ const AllBooks = (props) => {
         'Content-Type': 'application/json'
       }
     })
-      .then(res => {
-        // console.log(res)
-        return res
-      })
-      .then(res => {
-        // console.log(res)
-        return res
-      })
       .then(res => setBooks(res.data))
       .catch(error => {
         setBooks({ title: '', author: '' })
@@ -49,7 +40,7 @@ const AllBooks = (props) => {
   //     }
   //   })
   // }
-
+  // display all users' books starting with the latest created book
   const booksJsx = books.reverse().map(book => (
     <li key={book.id} className="all-books">
       <div className="photo-and-title">
